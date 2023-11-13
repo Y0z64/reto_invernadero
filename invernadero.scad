@@ -1,5 +1,5 @@
 include <lasercut.scad>;
-$fn=100;
+
 /* 
     Hecho por: Y0z64
     Medidas en mm
