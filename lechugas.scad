@@ -3,8 +3,12 @@
     Tenemos 3 paneles de acrilico de diferentes tamanos
     Este es el panel de las lechugas
 */
-
+$fn=10000;
 include <invernadero.scad>;
 
-translate([1,thickness+6,0]) lechuga();
-translate([x+2,thickness+6,0]) lechuga();
+projection() lechugas();
+
+ module lechugas(){
+    translate([1,thickness+6,0]) lechuga();
+    translate([x+2,thickness+6,0]) lechuga();
+}

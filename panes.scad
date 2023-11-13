@@ -5,8 +5,12 @@
 */
 
 
-$fn=1000;
+$fn=10000;
 include <invernadero.scad>;
 
-translate([1,thickness+6,0]) pan();
-translate([x+2,thickness+6,0]) pan();
+projection() panes();
+
+module panes(){
+    translate([1,thickness+6,0]) pan();
+    translate([x+2,thickness+6,0]) pan();
+}
