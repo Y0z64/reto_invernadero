@@ -8,7 +8,11 @@
 $fn=10000;
 include <invernadero.scad>;
 
-projection() panes();
+// LLamadas
+panes();
+
+// Render this
+//projection() panes();
 
 module panes(){
     translate([1,thickness+6,0]) pan();

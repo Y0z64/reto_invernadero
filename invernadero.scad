@@ -16,12 +16,15 @@ thickness = 2.4;
 opacity = 0.8;
 
 //Panes
-x = 458;
+x = 448;
 y = 620;
 fingers = 10;
+//Ventiladores
+vent_r = 30;
+
 
 //Lechugas
-ly = 500;
+ly = 480;
 
 //Jamon
 jfingers = 3;
@@ -58,7 +61,7 @@ module pan(){
             finger_joints=[
                 [UP, 1, fingers],
                 [DOWN, 0, fingers]
-            ]
+                ]
         );
         union(){
             translate([0,-thickness+y/2-desp_l,thickness*2]) rotate([-90,0,0]) for (i = [0:jfingers-1]){

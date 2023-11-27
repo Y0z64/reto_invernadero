@@ -12,24 +12,6 @@
 
 include <invernadero.scad>;
 
-// Variables
-//Globales 
-thickness = 2.4;
-opacity = 0.8;
-
-//Panes
-x = 458;
-y = 620;
-fingers = 10;
-
-//Lechugas
-ly = 500;
-
-//Jamon
-jfingers = 3;
-desp_l = 105;
-desp_r = 102;
-
 //Macetas 
 mlrx = 180; //maceta left & right x
 mmx = 176; //maceta middle x
@@ -48,7 +30,7 @@ bz = 23;
 // Llamadas
 base();
 macetas();
-translate([bx-40,50,bz]) rotate([0,0,90]) sandwich();
+translate([bx-40,60,bz]) rotate([0,0,90]) sandwich();
 
 // Grupos
 module macetas(){
