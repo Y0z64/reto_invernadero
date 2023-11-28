@@ -5,29 +5,29 @@
     orificios para fuente de agua y cableado
 */
 
-$fn=500;
+$fn=20;
 include <invernadero.scad>;
 
 // Referencia
-// translate([0,thickness,0]) color("Red", 1) pan();
+// translate([0,thickness,0]) color("Red", 0.5) pan();
 
 // Medidas
 vent = 60;
 zip_vent = 5;
-zip_vent_sep = 5;
-zip_corr = 2;
+zip_vent_sep = 5.3;
+zip_corr =5;
 
 tab_size = 10;
 tab_separation = 60;
 
 cable_w = 15;
-cable_h = 7;
+cable_h = 5;
 cable_vert = 40;
 cable_hor = 20;
 
 // Pan de enfrente
 // Renderiza esto
-translate([0,0,0]) color("Gold", 0.5) front_pan_moded();
+color("Gold", 0.5) front_pan_moded();
 
 module front_pan_moded(){
     difference() {
