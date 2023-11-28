@@ -5,8 +5,9 @@
     orificios para fuente de agua y cableado
 */
 
-$fn=100;
+$fn=64;
 include <invernadero.scad>;
+include <esp_box.scad>;
 
 // Referencia
 // translate([0,thickness,0]) color("Red", 0.5) pan();
@@ -25,7 +26,7 @@ bacbox_tab_separation = 120;
 //Front panel
 cable_w = 15;
 cable_h = 5;
-cable_vert = 40;
+cable_vert = 50;
 cable_hor = 20;
 
 //Back panel wire holes
@@ -37,14 +38,22 @@ bcable_ph = 20;
 d_tube = 6;
 tube_h = 20;
 
+// Boxes
+fbox_h = 50;
+opened = false;
+combined = true;
+
 // Pan de enfrente
 // Renderiza esto
 // Front pan
-projection() color("Gold", 0.5) front_pan_moded();
+color("Gold", 0.5) front_pan_moded();
 
 // Back pan
 // projection() color("Gold", 0.5) back_pan_moded();
 
+// Boxes
+//Front
+front_boxes();
 
 module back_pan_moded(){
     difference() {
@@ -134,4 +143,10 @@ module wire_holes() {
 
 module tube_holes() {
     cylinder(h=thickness*3, d=d_tube, center=true);
+}
+
+module front_boxes() {
+    translate([fbox_h,y/2,thickness]) rotate([0,0,-90]) esp_box(opened=opened, combined=combined);
+    translate([fbox_h,y/2-desp_r*2,thickness]) rotate([0,0,-90]) esp_box(opened=opened, combined=combined);
+    translate([fbox_h,y/2+desp_l*2,thickness]) rotate([0,0,-90]) esp_box(opened=opened, combined=combined);
 }
