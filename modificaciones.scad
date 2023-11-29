@@ -13,12 +13,14 @@ include <esp_box.scad>;
 // translate([0,thickness,0]) color("Red", 0.5) pan();
 
 // Medidas
+
+//Ventilador
 vent = 60;
 zip_vent = 5;
 zip_vent_sep = 5.3;
 zip_corr =5;
 
-// Box tabs
+// Front tabs
 tab_size = 7;
 tab_separation = 60;
 bacbox_tab_separation = 120;
@@ -35,25 +37,26 @@ bcable_w = 20;
 bcable_ph = 20;
 
 // Tubing holes
-d_tube = 6;
+d_tube = 10;
 tube_h = 20;
 
 // Boxes
-fbox_h = 50;
+fbox_h = 55;
 opened = false;
 combined = true;
 
 // Pan de enfrente
 // Renderiza esto
 // Front pan
-color("Gold", 0.5) front_pan_moded();
+projection() color("Gold", 0.5) front_pan_moded();
 
 // Back pan
-// projection() color("Gold", 0.5) back_pan_moded();
+// color("Gold", 0.5) back_pan_moded();
+
 
 // Boxes
 //Front
-front_boxes();
+// front_boxes();
 
 module back_pan_moded(){
     difference() {
@@ -92,6 +95,7 @@ module front_pan_moded(){
             translate([x/2-x/2.7,y/2,0]) front_tabs(tab_separation=tab_separation);
             translate([x/2-x/2.7,y/2-desp_r*2,0]) front_tabs(tab_separation=tab_separation);
             translate([x/2-x/2.7,y/2+desp_l*2,0]) front_tabs(tab_separation=tab_separation);
+            
         }
     }
 }

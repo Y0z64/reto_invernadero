@@ -5,11 +5,13 @@
 */
 
 
-$fn=10000;
+//$fn=10000;
 include <invernadero.scad>;
+include <modificaciones.scad>;
 
 // LLamadas
 panes();
+front_boxes();
 
 // Render this
 //projection() panes();
